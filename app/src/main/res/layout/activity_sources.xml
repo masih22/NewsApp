@@ -17,6 +17,7 @@
         android:layout_marginBottom="696dp"
         android:text="Searched For: "
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,15 +25,42 @@
 
     <Spinner
         android:id="@+id/newsSpinner"
-        android:layout_width="211dp"
-        android:layout_height="26dp"
+        android:layout_width="240dp"
+        android:layout_height="54dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="651dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchedForText" />
+        app:layout_constraintTop_toBottomOf="@+id/searchedForText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/sourceChangeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="161dp"
+        android:layout_marginBottom="560dp"
+        android:text="Skip Source"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newsSpinner"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sourcesRecyclerView"
+        android:layout_width="376dp"
+        android:layout_height="528dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sourceChangeButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
