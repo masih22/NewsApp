@@ -13,6 +13,12 @@
         android:theme="@style/Theme.NewsProject2025"
         tools:targetApi="31">
         <activity
+            android:name=".TopHeadlinesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MapsActivity"
+            android:exported="false" />
+        <activity
             android:name=".SourcesActivity"
             android:exported="false" />
         <activity

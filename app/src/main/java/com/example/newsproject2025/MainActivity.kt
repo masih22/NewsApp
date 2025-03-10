@@ -48,6 +48,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(yelpListIntent)
         }
 
+        localButton.setOnClickListener {
+            val localNewsIntent = Intent(this@MainActivity, MapsActivity::class.java)
+            startActivity(localNewsIntent)
+        }
+
+        headlineButton.setOnClickListener {
+            val headlinesIntent = Intent(this@MainActivity, TopHeadlinesActivity::class.java)
+            startActivity(headlinesIntent)
+        }
+
     }
 
     private val myTextWatcher: TextWatcher =object: TextWatcher {
