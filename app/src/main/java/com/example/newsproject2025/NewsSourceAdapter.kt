@@ -6,16 +6,18 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class NewsSourceAdapter(val newsSources: List<NewsSource>) : RecyclerView.Adapter<NewsSourceAdapter.ViewHolder>() {
+class NewsSourceAdapter(var newsSources: List<NewsSource>) : RecyclerView.Adapter<NewsSourceAdapter.ViewHolder>() {
 
-    class ViewHolder(rootLayout: View) : RecyclerView.ViewHolder(rootLayout) {
-        val sourceNameText: TextView = rootLayout.findViewById(R.id.source_name)
-        val sourceDescriptionText: TextView = rootLayout.findViewById(R.id.source_description)
+    var onItemClick: ((NewsSource) -> Unit)? = null
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val sourceNameText: TextView = itemView.findViewById(R.id.source_name)
+        val sourceDescriptionText: TextView = itemView.findViewById(R.id.source_description)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val layoutInflater: LayoutInflater = LayoutInflater.from(parent.context)
-        val rootLayout: View = layoutInflater.inflate(R.layout.recyler_item_source, parent, false)
+        val layoutInflater = LayoutInflater.from(parent.context)
+        val rootLayout = layoutInflater.inflate(R.layout.recyler_item_source, parent, false)
         return ViewHolder(rootLayout)
     }
 
@@ -23,9 +25,16 @@ class NewsSourceAdapter(val newsSources: List<NewsSource>) : RecyclerView.Adapte
         val currentSource = newsSources[position]
         holder.sourceNameText.text = currentSource.name
         holder.sourceDescriptionText.text = currentSource.description
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(currentSource)
+        }
     }
 
-    override fun getItemCount(): Int {
-        return newsSources.size
+    override fun getItemCount(): Int = newsSources.size
+
+    fun updateSources(newSources: List<NewsSource>) {
+        newsSources = newSources
+        notifyDataSetChanged()
     }
 }

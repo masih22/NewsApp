@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- News Source Name -->
         <TextView
             android:id="@+id/source_name"
             android:layout_width="wrap_content"
@@ -24,7 +23,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- News Source Description -->
         <TextView
             android:id="@+id/source_description"
             android:layout_width="wrap_content"

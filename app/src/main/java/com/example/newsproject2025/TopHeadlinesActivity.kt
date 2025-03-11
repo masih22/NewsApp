@@ -128,7 +128,7 @@ class TopHeadlinesActivity : AppCompatActivity() {
         val selectedCategory = categorySpinner.selectedItem.toString().lowercase()
 
         val apiKey = getString(R.string.news_api_key)
-        val url = "https://newsapi.org/v2/top-headlines?country=us&category=$selectedCategory&apiKey=$apiKey"
+        val url = "https://newsapi.org/v2/top-headlines?country=us&category=$selectedCategory&page=$currentPage&apiKey=$apiKey"
         Log.d("TopHeadlines", "Request URL: $url")
 
         val request = Request.Builder()
