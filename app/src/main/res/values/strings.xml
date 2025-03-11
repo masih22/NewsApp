@@ -3,6 +3,7 @@
     <string-array name="news_categories">
         <item>Business</item>
         <item>Entertainment</item>
+        <item>General</item>
         <item>Health</item>
         <item>Science</item>
         <item>Sports</item>
